@@ -3,6 +3,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.File;
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,6 +38,7 @@ public class ProductoRepository {
         }
     }
 
+
     // Obtener todos los productos (GET)
     public List<Producto> findAll() {
         return productos;
@@ -47,13 +49,23 @@ public class ProductoRepository {
         return productos.stream().filter(p -> p.getId() == id).findFirst().orElse(null);
     }
 
-    // Guardar un nuevo producto (POST)
     public Producto save(Producto producto) {
         producto.setId(currentId++);
+        if (producto.getFecha() == null) {
+            producto.setFecha(LocalDateTime.now());  // Asignar la fecha actual si no está definida
+        }
         productos.add(producto);
         saveProductos();
         return producto;
     }
+
+    // Guardar un nuevo producto (POST)
+   // public Producto save(Producto producto) {
+     //   producto.setId(currentId++);
+       // productos.add(producto);
+        //saveProductos();
+        //return producto;
+    //}
 
     // Actualizar un producto existente (PUT)
     public Producto update(int id, Producto producto) {

@@ -1,1 +1,1 @@
-[{"id":2,"nombre":"Vaso","descripcion":"Descripción del nuevo producto","precio":330.0},{"id":3,"nombre":"Papas","descripcion":"Producto actualizado","precio":21.0},{"id":4,"nombre":"Dulces","descripcion":"caramelo dulce","precio":150.0},{"id":5,"nombre":"Refrescos","descripcion":"bebida azucarada","precio":25.0},{"id":6,"nombre":"Galletas","descripcion":"crujientes","precio":17.8}]
+[{"id":1,"nombre":"Refrescos","descripcion":"Descripción...","precio":30.0,"stock":27,"fecha"
